@@ -14,7 +14,7 @@ var video;
   },
    preload : function()
   {
-  //game.plugins.add(new Phaser.Plugin.PhaserWebComponents(game));
+  game.plugins.add(new Phaser.Plugin.PhaserWebComponents(game));
    //game.load.webfont('tahoma','Tahoma');
    game.load.video('hands','assets/hands.mp4');
 
@@ -46,7 +46,7 @@ var video;
   // reg.modal = new gameModal(game);
     //  this.createModals();
 
-  game.PhaserWebComponents.components.Media.VideoPlayer({
+   game.PhaserWebComponents.components.Media.VideoPlayer({
   game: this.game,
   // attach to an HTML component. Will replace what ever selector you have
   // target: secondWindow.getContainerNode().querySelector('[data-replace="videoplayer"]'),
@@ -119,41 +119,6 @@ var video;
 
  }
 
- /*var quiz_screen = function(game){}
- quiz_screen.prototype =
- {
-  init : function()
-  {
-     game.load = new CustomLoader(game);
-  },
-   preload : function()
-  {
-  //game.plugins.add(new Phaser.Plugin.PhaserWebComponents(game));
-   game.load.webfont('tahoma','Tahoma');
-   game.load.video('demo','assets/SummerBreeze.mp4');
-
- },
-  create : function()
-  {
-  //   sessionstart();
-
-  background[0] = game.add.sprite(0,0,'demo','INTROSCREEN_BG');
-  //submit_button = game.add.button()
-  var style = { font: "23px tahoma", fill: "#00C7FF", boundsAlignH: "center", boundsAlignV: "middle" };
-  screen_text[0] = game.add.text(167,100,'Let us learn about how a pan works',style);
-  var style1 = { font: "16px tahoma", fill: "#00C7FF", boundsAlignH: "center", boundsAlignV: "middle" };gagame.load.video('');me.load.video('');
-
-
-  },
-
-
-
-  render : function()
-         {
-          game.debug.text('x: ' + game.input.x + ' y: ' + game.input.y, 32, 32);
-          },
-
- }*/
 
 
 game.state.add('start_screen',start_screen);
