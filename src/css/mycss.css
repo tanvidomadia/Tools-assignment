@@ -1,0 +1,7 @@
+@font-face {	font-family: 'Tahoma';	src: url('Tahoma.ttf') format('truetype');}
+@font-face {	font-family: 'SansFractionsPlain';	src: url('SansFractionsPlain.ttf') format('truetype');}
+
+canvas1 {   display : block;
+  x: 472;
+  y: 244;
+  margin : auto;}
