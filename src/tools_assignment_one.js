@@ -1725,6 +1725,7 @@ sunrise_screen : function()
         game.load.webfont('tahoma','Tahoma');
         game.load.image('after','assets/right.png');
 
+
        game.load.video('lecture','assets/lecture.mp4');
 
       },
@@ -1732,7 +1733,7 @@ sunrise_screen : function()
        {
        //   sessionstart();
        video_play[13] = 0;
-       video[13] = game.add.video('intro');
+       video[13] = game.add.video('lecture');
        //background[0] = game.add.sprite(0,0,'demo','INTROSCREEN_BG');
        //submit_button = game.add.button()
        video[13].play(true);
@@ -1740,7 +1741,7 @@ sunrise_screen : function()
        video[13].onComplete.add(this.video13_stop,this);
 
        var sprite = video[13].addToWorld(0,60,0,0);
-     //  sprite.scale.setTo(0.75,0.75);
+      sprite.scale.setTo(0.7,0.7);
           game.input.onDown.add(this.pause13, this);
 
        //background[0] = game.add.sprite(0,0,'demo','INTROSCREEN_BG');
@@ -1754,7 +1755,7 @@ sunrise_screen : function()
        left_button[14].inputEnabled = true;
        left_button[14].events.onInputDown.add(this.pan1,this);
        var style = { font: "23px tahoma", fill: "#000000", boundsAlignH: "center", boundsAlignV: "middle" };
-       screen_text[10] = game.add.text(92,146,'What kind of heat transfer is seen here?',style);
+       //screen_text[10] = game.add.text(92,146,'What kind of heat transfer is seen here?',style);
 
        },
         pan1 : function()
@@ -1770,7 +1771,7 @@ sunrise_screen : function()
         video13_stop : function()
         {
 
-            video[14].onComplete.add(this.video_stop,this);
+            video[13].onComplete.add(this.video_stop,this);
          //game.state.start('');
 
         },
@@ -2083,7 +2084,7 @@ sunrise_screen : function()
        left_button[16] = game.add.sprite(38,12,'after');
        left_button[16].scale.setTo(0.12,0.12);
        left_button[16].inputEnabled = true;
-       left_button[16].events.onInputDown.add(this.buttermelt2,this);
+       left_button[16].events.onInputDown.add(this.pan,this);
        right_button[16] = game.add.sprite(950,12,'before');
        right_button[16].scale.setTo(0.12,0.12);
 
@@ -2134,7 +2135,7 @@ sunrise_screen : function()
             feedback[14] = game.add.text(95,502,'Are you sure? You might be overlooking some things here.',style4);
             //feedback_next[6]=game.add.text(95,530,'Let us understand this more. Click on the next button.',style4);
             right_button[16].inputEnabled = true;
-            right_button[16].events.onInputDown.add(this.pan,this);
+            right_button[16].events.onInputDown.add(this.pan1,this);
             for (i=14; i<18; i++)
             {
               if(feedback[i])
@@ -2161,7 +2162,7 @@ sunrise_screen : function()
             //feedback_next[5] = game.add.text(95,532,'Let us understand this better in the next section.',style4);
 
             right_button[16].inputEnabled = true;
-            right_button[16].events.onInputDown.add(this.pan,this);
+            right_button[16].events.onInputDown.add(this.pan1,this);
             for (i=14; i<18; i++)
             {
               if(feedback[i])
@@ -2186,7 +2187,7 @@ sunrise_screen : function()
             //feedback_next[5] = game.add.text(95,532,'Let us understand this better in the next section.',style4);
 
             right_button[16].inputEnabled = true;
-            right_button[16].events.onInputDown.add(this.pan,this);
+            right_button[16].events.onInputDown.add(this.pan1,this);
             for (i=14; i<18; i++)
             {
               if(feedback[i])
@@ -2207,11 +2208,11 @@ sunrise_screen : function()
           }
           else if (fb == "D. All of the above")
           {
-            feedback[17] = game.add.text(95,502,'That is not right. For heat transfer in this case, the two objects are in contact.',style3);
+            feedback[17] = game.add.text(95,502,'That is right. ',style3);
             //feedback_next[5] = game.add.text(95,532,'Let us understand this better in the next section.',style4);
 
            right_button[16].inputEnabled = true;
-            right_button[16].events.onInputDown.add(this.pan,this);
+            right_button[16].events.onInputDown.add(this.pan1,this);
             for (i=14; i<18; i++)
             {
               if(feedback[i])
@@ -2232,11 +2233,11 @@ sunrise_screen : function()
           }
 
         },
-        buttermelt2 : function()
+        pan : function()
         {
-           game.state.start('buttermelt2_screen');
+           game.state.start('pan_screen');
          },
-        hotairballoon : function()
+        pan1 : function()
         {
           game.state.start('end_screen');
         }
@@ -2335,6 +2336,6 @@ game.state.add('buttermelt2_screen',buttermelt2_screen);
 game.state.add('buttermelt_screen',buttermelt_screen);
 game.state.add('pan_screen',pan_screen);
 
-game.state.start('quiz_screen');
+game.state.start('start_screen');
 
 }
