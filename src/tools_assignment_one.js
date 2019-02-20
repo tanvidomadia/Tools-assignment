@@ -735,7 +735,7 @@ right_button[15].scale.setTo(0.12,0.12);
 
 
        //var sprite = video[6].addToWorld(0,60,0,0);
-        sprite.scale.setTo(0.8,0.8);
+        sprite.scale.setTo(0.7,0.7);
           game.input.onDown.add(this.pause7, this);
        //sprite.scale.setTo(0.75,0.75);
      this.game.scale.pageAlignHorizontally = true;
@@ -759,10 +759,10 @@ right_button[15].scale.setTo(0.12,0.12);
        },
 
 
-       render : function()
-              {
-               game.debug.text('x: ' + game.input.x + ' y: ' + game.input.y, 32, 32);
-               },
+       // render : function()
+       //        {
+       //         game.debug.text('x: ' + game.input.x + ' y: ' + game.input.y, 32, 32);
+       //         },
                pause7 : function()
                {
 
@@ -833,11 +833,11 @@ right_button[15].scale.setTo(0.12,0.12);
        var sprite = video[6].addToWorld(0,60,0,0);
      sprite.scale.setTo(0.7,0.7);
           game.input.onDown.add(this.pause, this);
-          left_button[9] = game.add.sprite(38,12,'after');
+          left_button[9] = game.add.sprite(38,-2,'after');
           left_button[9].scale.setTo(0.12,0.12);
           left_button[9].inputEnabled = true;
           left_button[9].events.onInputDown.add(this.backtoquiz3screen,this);
-          right_button[9] = game.add.sprite(950,12,'before');
+          right_button[9] = game.add.sprite(950,-2,'before');
           right_button[9].scale.setTo(0.12,0.12);
           right_button[9].inputEnabled = true;
           right_button[9].events.onInputDown.add(this.quiz4screen,this);
@@ -926,11 +926,11 @@ right_button[15].scale.setTo(0.12,0.12);
        var sprite = video[7].addToWorld(0,60,0,0);
      sprite.scale.setTo(0.56,0.62);
           game.input.onDown.add(this.pause, this);
-          left_button[6] = game.add.sprite(38,12,'after');
+          left_button[6] = game.add.sprite(38,-2,'after');
           left_button[6].scale.setTo(0.12,0.12);
           left_button[6].inputEnabled = true;
           left_button[6].events.onInputDown.add(this.backtoquiz2screen,this);
-          right_button[6] = game.add.sprite(950,12,'before');
+          right_button[6] = game.add.sprite(950,-2,'before');
           right_button[6].scale.setTo(0.12,0.12);
           right_button[6].inputEnabled = true;
           right_button[6].events.onInputDown.add(this.sunrise_screen,this);
@@ -1117,13 +1117,21 @@ sunrise_screen : function()
        video[8].loop = false;
        video[8].onComplete.add(this.video_stop,this);
 
-       var sprite = video[0].addToWorld(0,60,0,0);
-     //  sprite.scale.setTo(0.75,0.75);
+       var sprite = video[8].addToWorld(0,60,0,0);
+     sprite.scale.setTo(0.55,0.55);
           game.input.onDown.add(this.pause, this);
+          left_button[16] = game.add.sprite(38,0,'after');
+          left_button[16].scale.setTo(0.1,0.1);
+          left_button[16].inputEnabled = true;
+          left_button[16].events.onInputDown.add(this.quiz5screen,this);
+          right_button[16] = game.add.sprite(950,0,'before');
+          right_button[16].scale.setTo(0.1,0.1);
+          right_button[16].inputEnabled = true;
+          right_button[16].events.onInputDown.add(this.quiz6screen,this);
 
 
-       var style = { font: "23px arial", fill: "#000000", boundsAlignH: "center", boundsAlignV: "middle" };
-      // screen_text[0] = game.add.text(352,17,'Let us learn about how a pan works',style);
+       var style = { font: "17px arial", fill: "#000000", boundsAlignH: "center", boundsAlignV: "middle" };
+      var newtext=  game.add.text(352,900,'To play and pause, tap on the screen',style);
        //var style1 = { font: "16px tahoma", fill: "#000000", boundsAlignH: "center", boundsAlignV: "middle" };
        // reg.modal = new gameModal(game);
          //  this.createModals();
@@ -1147,6 +1155,18 @@ sunrise_screen : function()
 
                },
 
+               quiz5screen: function()
+               {
+
+                game.state.start('quiz5_screen');
+
+               },
+               quiz6screen : function()
+               {
+
+                game.state.start('quiz6_screen');
+
+               },
       }
       var buttermelt2_screen = function(game){}
       buttermelt2_screen.prototype =
@@ -1192,14 +1212,14 @@ sunrise_screen : function()
        video[9].onComplete.add(this.video_stop,this);
 
        var sprite = video[9].addToWorld(0,60,0,0);
-     //  sprite.scale.setTo(0.75,0.75);
+     sprite.scale.setTo(0.7,0.7);
           game.input.onDown.add(this.pause, this);
-          left_button[10] = game.add.sprite(38,12,'after');
-          left_button[10].scale.setTo(0.12,0.12);
+          left_button[10] = game.add.sprite(38,0,'after');
+          left_button[10].scale.setTo(0.1,0.1);
           left_button[10].inputEnabled = true;
           left_button[10].events.onInputDown.add(this.buttermelt2,this);
-          right_button[10] = game.add.sprite(950,12,'before');
-          right_button[10].scale.setTo(0.12,0.12);
+          right_button[10] = game.add.sprite(950,0,'before');
+          right_button[10].scale.setTo(0.1,0.1);
           right_button[10].inputEnabled = true;
           right_button[10].events.onInputDown.add(this.quiz4screen,this);
 
@@ -1225,7 +1245,7 @@ sunrise_screen : function()
                video_stop : function()
                {
 
-                game.state.start('hands_screen');
+                game.state.start('quiz4_screen');
 
                },
                buttermelt2 : function()
@@ -1601,7 +1621,7 @@ sunrise_screen : function()
           {
             //hiding all previous feedback
 
-            feedback[10] = game.add.text(95,502,'Are you sure? The balloon rises up because of the fire which suggests upward movement of warm air.',style4);
+            feedback[10] = game.add.text(95,502,'Are you sure? The balloon rises up because of the hot air from fire.',style4);
             //feedback_next[6]=game.add.text(95,530,'Let us understand this more. Click on the next button.',style4);
             right_button[13].inputEnabled = true;
             right_button[13].events.onInputDown.add(this.pan,this);
@@ -1741,7 +1761,7 @@ sunrise_screen : function()
        video[13].onComplete.add(this.video13_stop,this);
 
        var sprite = video[13].addToWorld(0,60,0,0);
-      sprite.scale.setTo(0.7,0.7);
+      sprite.scale.setTo(0.6,0.6);
           game.input.onDown.add(this.pause13, this);
 
        //background[0] = game.add.sprite(0,0,'demo','INTROSCREEN_BG');
@@ -1908,7 +1928,7 @@ sunrise_screen : function()
        screen_text[9] = game.add.text(95,190,'Click on the correct text answer below.',style1);
        var style2 = { font: "23px tahoma", fill: "#737373", boundsAlignH: "center", boundsAlignV: "middle" };
 
-       answer_option[6] = game.add.text(100,230,'A. Conduction',style2);
+       answer_option[6] = game.add.text(100,230,'A. Conduction and Convection',style2);
        answer_option[7] = game.add.text(100,260,'B. Convection', style2);
        answer_option[8] = game.add.text(100,290,'C. Radiation', style2);
        answer_option[9] = game.add.text(100,320,'D. All of the above',style2);
@@ -1940,11 +1960,11 @@ sunrise_screen : function()
 
 
 
-          if (fb == "A. Conduction")
+          if (fb == "A. Conduction and Convection")
           {
             //hiding all previous feedback
 
-            feedback[6] = game.add.text(95,502,'It is Conduction, since the lid touches the hot cup of water, it transfers heat to the lid.',style3);
+            feedback[6] = game.add.text(95,502,'It is Conduction and Convection, since the lid hot water in the cup, it transfers heat to the lid.',style3);
             //feedback_next[6]=game.add.text(95,530,'Let us understand this more. Click on the next button.',style4);
             right_button[11].inputEnabled = true;
             right_button[11].events.onInputDown.add(this.hotairballoon,this);
@@ -2208,7 +2228,7 @@ sunrise_screen : function()
           }
           else if (fb == "D. All of the above")
           {
-            feedback[17] = game.add.text(95,502,'That is right. ',style3);
+            feedback[17] = game.add.text(95,502,'That is right. Click next to see the lecture. ',style3);
             //feedback_next[5] = game.add.text(95,532,'Let us understand this better in the next section.',style4);
 
            right_button[16].inputEnabled = true;
