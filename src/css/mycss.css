@@ -5,3 +5,7 @@ canvas1 {   display : block;
   x: 472;
   y: 244;
   margin : auto;}
+
+  div.a {
+    align: center;
+  }
