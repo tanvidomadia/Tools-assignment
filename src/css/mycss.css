@@ -9,3 +9,11 @@ canvas1 {   display : block;
   div.a {
     align: center;
   }
+  p {
+    position: relative;
+ bottom: 8000;
+ right: 600;
+ top: 860px;
+ left : 720px;
+ width: 500px;
+  }
