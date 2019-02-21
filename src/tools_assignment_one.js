@@ -52,7 +52,7 @@ var image1;
   //   sessionstart()
   //video_play[0] = 0;
 
-  image1 = game.add.sprite(200,300,'play');
+  image1 = game.add.sprite(300,300,'play');
   image1.inputEnabled = true;
   image1.events.onInputDown.add(this.start1,this);
 
@@ -257,6 +257,7 @@ right_button[15].scale.setTo(0.12,0.12);
 
   answer_option[0] = game.add.text(100,230,'A. Heat flows from warmer to cooler hand until they both are at same temperature.',style2);
   answer_option[1] = game.add.text(100,260,'B. There is friction between their two hands',style2);
+
 
 
   //
